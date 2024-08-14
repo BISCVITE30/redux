@@ -10,7 +10,7 @@ class ThemedButton extends React.Component {
           backgroundColor: this.context.background,
           color: this.context.fontColor,
         }}
-        class="btn"
+        className="btn"
       />
     );
   }
