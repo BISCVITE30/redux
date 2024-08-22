@@ -13,7 +13,7 @@ export const increment = () => {
 export const decrement = () => {
   return {
     type: DECREMENT,
-    payload: '-1'
+    payload: '-1',
   };
 };
 export const reset = () => {
@@ -29,6 +29,10 @@ const initialState = {
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
+      return {
+        ...state,
+        history: [...state.history, action.payload],
+      };
     case DECREMENT:
       return {
         ...state,
