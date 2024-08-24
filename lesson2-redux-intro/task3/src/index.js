@@ -1,11 +1,11 @@
 import store from './store';
-import { addUser, deleteUser } from './users.actions.js';
+import { addUser, deleteUser } from './users.actions';
 
-store.dispatch(addUser('Sarah', 10));
-store.dispatch(addUser('John', 20));
+store.dispatch(addUser({ id: 76, name: 'Sarah' }));
+store.dispatch(addUser({ id: 77, name: 'John' }));
 
-console.log('После добавления пользователей:', store.getState());
+store.subscribe(() => {
+  console.log('Изменение состояния:', store.getState());
+});
 
-store.dispatch(deleteUser(10));
-
-console.log('После удаления пользователя с ID 10:', store.getState());
+store.dispatch(deleteUser(76));
