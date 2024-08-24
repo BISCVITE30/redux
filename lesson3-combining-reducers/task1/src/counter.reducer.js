@@ -9,7 +9,7 @@ export const counterReducer = (state = initialState, action) => {
     case DECREMENT:
       return state - 1;
     case RESET:
-      return initialState;
+      return 0;
     default:
       return state;
   }
