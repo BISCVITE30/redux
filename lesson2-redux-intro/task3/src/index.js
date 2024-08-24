@@ -1,5 +1,5 @@
 import store from './store';
-import { addUser, deleteUser } from './users.action';
+import { addUser, deleteUser } from './users.actions.js';
 
 store.dispatch(addUser('Sarah', 10));
 store.dispatch(addUser('John', 20));
