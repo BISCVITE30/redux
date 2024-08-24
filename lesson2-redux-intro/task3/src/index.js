@@ -1,9 +1,11 @@
 import store from './store';
-import { addUser, deleteUser } from './users.actions';
+import { addUser, deleteUser } from './users.action';
 
 store.dispatch(addUser('Sarah', 10));
-store.dispatch(addUser('Sarah', 30));
-store.dispatch(addUser('Sarah', 20));
-store.dispatch(deleteUser(20));
+store.dispatch(addUser('John', 20));
 
-console.log(store.getState());
+console.log('После добавления пользователей:', store.getState());
+
+store.dispatch(deleteUser(10));
+
+console.log('После удаления пользователя с ID 10:', store.getState());
