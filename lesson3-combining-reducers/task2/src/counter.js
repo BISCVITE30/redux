@@ -28,9 +28,8 @@ export const counterReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(
+export const store = createStore(
   counterReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-export default store;
