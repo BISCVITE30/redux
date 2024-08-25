@@ -1,4 +1,4 @@
-import { USER_DELETE, USER_SET } from './user.actions';
+import { USER_REMOVE, USER_SET } from './user.actions';
 
 const initialState = null;
 
@@ -7,7 +7,7 @@ export const userReducer = (state = initialState, action) => {
     case USER_SET:
       return action.payload;
 
-    case USER_DELETE:
+    case USER_REMOVE:
       return null;
 
     default:

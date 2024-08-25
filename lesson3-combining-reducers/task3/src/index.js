@@ -1,17 +1,18 @@
-import { userDelete, userSet } from './user.actions';
 import store from './store';
+import { setUser, removeUser } from './user.actions';
 import { setLanguage } from './language.actions';
-import { addCart } from './cart.actions';
+import { addProduct, removeProduct } from './cart.actions';
 
 store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch(userSet({ name: 'Bob', id: 40 }));
-store.dispatch(userSet({ name: 'Tom', id: 20 }));
-store.dispatch(userDelete(20));
+store.dispatch(setUser({ name: 'Bob', id: 40 }));
+store.dispatch(setUser({ name: 'Tom', id: 20 }));
+store.dispatch(removeUser());
 
 store.dispatch(setLanguage('jp'));
 store.dispatch(setLanguage('rus'));
 
-store.dispatch(addCart({ id: 45, name: 'Milk'}));
+store.dispatch(addProduct({ id: 76, name: 'milk' }));
+store.dispatch(removeProduct(76));

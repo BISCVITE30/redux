@@ -1,16 +1,15 @@
 export const USER_SET = 'USER_SET';
-export const USER_DELETE = 'USER_DELETE';
+export const USER_REMOVE = 'USER_REMOVE';
 
-export const userSet = data => {
+export const setUser = data => {
     return {
         type: USER_SET,
         payload: data,
     }
 }
 
-export const userDelete = idToDelete => {
+export const removeUser = () => {
     return {
-        type: USER_DELETE,
-        payload: idToDelete,
+        type: USER_REMOVE
     }
 }

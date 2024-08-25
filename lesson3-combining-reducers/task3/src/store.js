@@ -3,20 +3,12 @@ import { cartReducer } from './cart.reducer';
 import { userReducer } from './user.reducer';
 import { languageReducer } from './language.reducer';
 
-const rootReducer = combineReducers({
-  cart: cartReducer,
-  language: languageReducer,
-  user: userReducer,
+const appReducer = combineReducers({
+    language: languageReducer,
+    user: userReducer,
+    cart: cartReducer,
 });
 
-const initialState = {
-  language: 'en',
-  user: null,
-  cart: {
-    products: [],
-  },
-};
-
-const store = createStore(rootReducer, initialState);
+const store = createStore(appReducer);
 
 export default store;

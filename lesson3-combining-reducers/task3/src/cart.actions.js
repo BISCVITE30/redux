@@ -1,16 +1,16 @@
 export const ADD_PRODUCT = 'CART/ADD_PRODUCT';
-export const DELETE_PRODUCT = 'CART/DELETE_PRODUCT';
+export const REMOVE_PRODUCT = 'CART/REMOVE_PRODUCT';
 
-export const addCart = data => {
+export const addProduct = product => {
     return {
         type: ADD_PRODUCT,
-        payload: data
+        payload: product
     }
 }
 
-export const deleteCart = idToDelete => {
+export const removeProduct = id => {
     return {
-        type: DELETE_PRODUCT,
-        payload: idToDelete,
+        type: REMOVE_PRODUCT,
+        payload: id,
     }
 }
