@@ -14,7 +14,7 @@ export const cartReducer = (state = initialState, action) => {
       };
 
     case DELETE:
-      return state.filter(el => el.id !== action.payload);
+      return state.products.filter(el => el.id !== action.payload);
     default:
       return state;
   }
