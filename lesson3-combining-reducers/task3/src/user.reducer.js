@@ -1,7 +1,7 @@
 import { USER_DELETE, USER_SET } from './user.actions';
 
 const initialState = {
-  user: null,
+  user: null, 
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -14,10 +14,9 @@ export const userReducer = (state = initialState, action) => {
     case USER_DELETE:
       return {
         ...state,
-        user: [...state.user.filter(user => user.id !== action.payload)],
+        user: state.user ? state.user.filter(user => user.id !== action.payload) : null,
       };
-    default: 
-    return state
+    default:
+      return state;
   }
 };
-
