@@ -1,5 +1,5 @@
 
-import { ADD, DELETE } from './cart.actions';
+import { ADD_PRODUCT, DELETE_PRODUCT } from './cart.actions';
 
 const initialState = {
   products: [],
@@ -7,13 +7,13 @@ const initialState = {
 
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD:
+    case ADD_PRODUCT:
       return {
         ...state,
         products: [...state.products, action.payload],
       };
 
-    case DELETE:
+    case DELETE_PRODUCT:
       return state.products.filter(el => el.id !== action.payload);
     default:
       return state;
